@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Dashboard</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="index.html">Predictive Analysis</a>
+
+    </nav>
+
+    <div id="wrapper">
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select company
+            </button>
+            <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-col">
+                <a onclick='updateAllCharts("Apple")' class="dropdown-item" href="#">Apple</a>
+                <a onclick='updateAllCharts("Amazon")' class="dropdown-item" href="#">Amazon</a>
+                <a onclick='updateAllCharts("AMD")' class="dropdown-item" href="#">AMD</a>
+                <a onclick='updateAllCharts("AT & T")' class="dropdown-item" href="#">AT & T</a>
+                <a onclick='updateAllCharts("Alibaba Group Holding")' class="dropdown-item" href="#">Alibaba Group Holding</a>
+                <a onclick='updateAllCharts("The Boeing Company")' class="dropdown-item" href="#">The Boeing Company</a>
+                <a onclick='updateAllCharts("Bank of America")' class="dropdown-item" href="#">Bank of America</a>
+                <a onclick='updateAllCharts("Berry Petroleum")' class="dropdown-item" href="#">Berry Petroleum</a>
+                <a onclick='updateAllCharts("Citigroup")' class="dropdown-item" href="#">Citigroup</a>
+                <a onclick='updateAllCharts("Constellation Pharmaceuticals")' class="dropdown-item" href="#">Constellation Pharmaceuticals</a>
+                <a onclick='updateAllCharts("DOMO")' class="dropdown-item" href="#">DOMO</a>
+              </div>
+              <div class="dropdown-col">
+                <a onclick='updateAllCharts("Endava")' class="dropdown-item" href="#">Endava</a>
+                <a onclick='updateAllCharts("The Walt Disney Company")' class="dropdown-item" href="#">The Walt Disney Company</a>
+                <a onclick='updateAllCharts("Delta Airlines")' class="dropdown-item" href="#">Delta Airlines</a>
+                <a onclick='updateAllCharts("Eventbrite")' class="dropdown-item" href="#">Eventbrite</a>
+                <a onclick='updateAllCharts("Ford Motor")' class="dropdown-item" href="#">Ford Motor</a>
+                <a onclick='updateAllCharts("Facebook")' class="dropdown-item" href="#">Facebook</a>
+                <a onclick='updateAllCharts("Fitbit")' class="dropdown-item" href="#">Fitbit</a>
+                <a onclick='updateAllCharts("General Electric")' class="dropdown-item" href="#">General Electric</a>
+                <a onclick='updateAllCharts("General Motors")' class="dropdown-item" href="#">General Motors</a>
+                <a onclick='updateAllCharts("Google")' class="dropdown-item" href="#">Google</a>
+                <a onclick='updateAllCharts("Hyatt Hotels")' class="dropdown-item" href="#">Hyatt Hotels</a>
+              </div>
+              <div class="dropdown-col">
+                <a onclick='updateAllCharts("The Home Depot")' class="dropdown-item" href="#">The Home Depot</a>
+                <a onclick='updateAllCharts("Intel")' class="dropdown-item" href="#">Intel</a>
+                <a onclick='updateAllCharts("IBM")' class="dropdown-item" href="#">IBM</a>
+                <a onclick='updateAllCharts("JP Morgan")' class="dropdown-item" href="#">JP Morgan</a>
+                <a onclick='updateAllCharts("Johnson & Johnson")' class="dropdown-item" href="#">Johnson & Johnson</a>
+                <a onclick='updateAllCharts("JetBlue")' class="dropdown-item" href="#">JetBlue</a>
+                <a onclick='updateAllCharts("The Coca-Cola Companny")' class="dropdown-item" href="#">The Coca-Cola Companny</a>
+                <a onclick='updateAllCharts("Lockhead Martin")' class="dropdown-item" href="#">Lockhead Martin</a>
+                <a onclick='updateAllCharts("Macy&rsquo;s")' class="dropdown-item" href="#">Macy's</a>
+                <a onclick='updateAllCharts("Microsoft")' class="dropdown-item" href="#">Microsoft</a>
+                <a onclick='updateAllCharts("Netflix")' class="dropdown-item" href="#">Netflix</a>
+              </div>
+              <div class="dropdown-col">
+                <a onclick='updateAllCharts("NVidia")' class="dropdown-item" href="#">NVidia</a>
+                <a onclick='updateAllCharts("Nokia")' class="dropdown-item" href="#">Nokia</a>
+                <a onclick='updateAllCharts("Oracle")' class="dropdown-item" href="#">Oracle</a>
+                <a onclick='updateAllCharts("Pandora Media")' class="dropdown-item" href="#">Pandora Media</a>
+                <a onclick='updateAllCharts("Tesla")' class="dropdown-item" href="#">Tesla</a>
+                <a onclick='updateAllCharts("Visa")' class="dropdown-item" href="#">Visa</a>
+                <a onclick='updateAllCharts("Verizon")' class="dropdown-item" href="#">Verizon</a>
+                <a onclick='updateAllCharts("Exxon Mobile")' class="dropdown-item" href="#">Exxon Mobile</a>
+                <a onclick='updateAllCharts("Xilinx")' class="dropdown-item" href="#">Xilinx</a>
+                <a onclick='updateAllCharts("Yelp")' class="dropdown-item" href="#">Yelp</a>
+                <a onclick='updateAllCharts("ZenDesk")' class="dropdown-item" href="#">ZenDesk</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price-->
+          <div class="card mb-3" data-toggle="collapse">
+            <div class="card-header">
+              <i class="fas fa-chart-area"></i>
+              Price</div>
+            <div class="card-body" height="400">
+              <div id="chart_price" width="100%" height="400"></div>
+            </div>
+          </div>
+
+          <div class="card mb-3" data-toggle="collapse">
+            <div class="card-header">
+              <i class="fas fa-chart-area"></i>
+              SMA</div>
+            <div class="card-body" height="400">
+              <div id="chart_sma" width="100%" height="400"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+    <!-- Page level plugin JavaScript-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.0"></script>-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+
+  </body>
+
+</html>
